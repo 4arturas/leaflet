@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css"
+     height="202px" preserveAspectRatio="none" style="width:172px;height:202px;background:#FFFFFF;" version="1.1"
+     viewBox="0 0 172 202" width="172px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <ellipse cx="81.0796" cy="20" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;"/>
+        <polygon fill="#F1F1F1" points="59.6758,50,102.4834,50,114.4834,62,102.4834,74,59.6758,74,47.6758,62,59.6758,50"
+                 style="stroke:#181818;stroke-width:0.5;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42.8076"
+              x="59.6758" y="66.5547">counter?
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="6.1177"
+              x="41.5581" y="59.2393">5
+        </text>
+        <rect fill="#F1F1F1" height="35.9609" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;"
+              width="53.3516" x="11" y="84"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="33.3516" x="21"
+              y="106.9492">print 5
+        </text>
+        <rect fill="#F1F1F1" height="35.9609" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;"
+              width="73.3672" x="87.7998" y="84"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53.3672"
+              x="97.7998" y="106.9492">print not 5
+        </text>
+        <polygon fill="#F1F1F1"
+                 points="81.0796,125.9609,93.0796,137.9609,81.0796,149.9609,69.0796,137.9609,81.0796,125.9609"
+                 style="stroke:#181818;stroke-width:0.5;"/>
+        <ellipse cx="81.0796" cy="180.9609" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;"/>
+        <ellipse cx="81.0796" cy="180.9609" fill="#222222" rx="6" ry="6" style="stroke:#222222;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="47.6758" x2="37.6758" y1="62" y2="62"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="37.6758" x2="37.6758" y1="62" y2="84"/>
+        <polygon fill="#181818" points="33.6758,74,37.6758,84,41.6758,74,37.6758,78"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="114.4834" x2="124.4834" y1="62" y2="62"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="124.4834" x2="124.4834" y1="62" y2="84"/>
+        <polygon fill="#181818" points="120.4834,74,124.4834,84,128.4834,74,124.4834,78"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="37.6758" x2="37.6758" y1="119.9609" y2="137.9609"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="37.6758" x2="69.0796" y1="137.9609" y2="137.9609"/>
+        <polygon fill="#181818" points="59.0796,133.9609,69.0796,137.9609,59.0796,141.9609,63.0796,137.9609"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="124.4834" x2="124.4834" y1="119.9609" y2="137.9609"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="124.4834" x2="93.0796" y1="137.9609" y2="137.9609"/>
+        <polygon fill="#181818" points="103.0796,133.9609,93.0796,137.9609,103.0796,141.9609,99.0796,137.9609"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="81.0796" x2="81.0796" y1="30" y2="50"/>
+        <polygon fill="#181818" points="77.0796,40,81.0796,50,85.0796,40,81.0796,44"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+        <line style="stroke:#181818;stroke-width:1.0;" x1="81.0796" x2="81.0796" y1="149.9609" y2="169.9609"/>
+        <polygon fill="#181818" points="77.0796,159.9609,81.0796,169.9609,85.0796,159.9609,81.0796,163.9609"
+                 style="stroke:#181818;stroke-width:1.0;"/>
+
+    </g>
+</svg>
