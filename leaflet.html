@@ -31,85 +31,15 @@
   <script src="https://cdn.jsdelivr.net/npm/leaflet.heat@0.2.0/dist/leaflet-heat.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/Leaflet-MovingMaker@0.0.1/MovingMarker.min.js"></script>
 
-  <script src="init.js"></script>
-  <script src="leaflet.js"></script>
+  <script src="my-init.js"></script>
+  <script src="my-leaflet.js"></script>
+  <script src="pq.js"></script>
+  <script src="astar.js"></script>
 
 </head>
 
 <body>
 <div id="map"></div>
-
-
-
-<!--<script>
-  var heat = L.heatLayer([
-            [4022, 711, 1000],
-            [4022, 722, 1000],
-            [4022, 733, 1000],
-            // [4022, 700, 2500], // lat, lng, intensity
-          ], { radius: 50 })
-          // .addTo(map)
-  ;
-  map.addLayer(heat);
-</script>-->
-
-
-<!--<script>
- var popup = L.popup()
- .setLatLng(xy(711, 4022))
- .setContent('<p>Hello world!<br />This is a nice popup.</p>')
- .openOn(map);
-</script>-->
-
-<!--<script>
- const latlngs = [];
- for ( let i = 0; i < 1000; i++ )
- {
- latlngs.push([4000+i, 700+i])
- }
- const latlngs2 = [];
- for ( let i = 0; i < 1000; i++ )
- {
- latlngs2.push([5000+i, 600+i])
- }
-
- // const options = { use: L.polyline, delay: 400, dashArray: [10,20], weight: 5, color: "#0000FF", pulseColor: "#FFFFFF" };
- const options = {
- "delay": 400,
- "dashArray": [
- 10,
- 20
- ],
- "weight": 5,
- "color": "#0000FF",
- "pulseColor": "#FFFFFF",
- "paused": false,
- "reverse": false,
- "hardwareAccelerated": true
- };
- const latLngsCouple = [...latlngs, ...latlngs2];
-
-
- const path = L.polyline.antPath(latLngsCouple, options);
- // path.addTo(map);
-
- map.addLayer(path);
- map.fitBounds(path.getBounds())
-</script>
-
-<script>
- var greenIcon = L.icon({
- iconUrl: 'img/database-structure.png',
- shadowUrl: 'img/database-structure.png',
-
- iconSize: [32, 32], // size of the icon
- shadowSize: [32, 32], // size of the shadow
- iconAnchor: [32, 32], // point of the icon which will correspond to marker's location
- shadowAnchor: [32, 32], // the same for the shadow
- popupAnchor: [32, 32] // point from which the popup should open relative to the iconAnchor
- });
- L.marker(xy(720, 4022), {icon: greenIcon}).addTo(map);
-</script>-->
 
 </body>
 
