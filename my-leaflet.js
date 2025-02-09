@@ -41,13 +41,19 @@ img.onload = async function() {
     // Example usage:
     const graphData = extractGraphData( JSON.parse(graphJson) );
 
-    console.log( graphData.nodes[0] );
-    console.log( graphData.nodes[1] );
+    // console.log( graphData.nodes[0] );
+    // console.log( graphData.nodes[1] );
 
     for ( const node of graphData.nodes )
     {
         // L.marker(node.latlan).addTo(map);
     }
+
+    const node0 = graphData.nodes[0];
+    const node1 = graphData.nodes[1];
+    const traveler = L.marker(node0.latlan).addTo(map);
+    const velocity = calculate_Velocity( node0.latlan, node1.latlan, 1000 );
+    animate( traveler, node0.latlan, node1.latlan, velocity, 10 );
 
     for ( const edge of graphData.edges )
     {
@@ -103,6 +109,54 @@ img.onload = async function() {
 
 }
 img.src = imgName;
+
+let interval;
+let nextTime = -1;
+function animate( marker, from, to, v0, time )
+{
+    nextTime = new Date().getTime();
+    interval = setTimeout( () =>
+    {
+        const xFrom = from[1];
+        const yFrom = from[0];
+        const xTo = to[1];
+        const yTo = to[0];
+
+        const nextX = xFrom + v0.x * time;
+        const nextY = yFrom + v0.y * time;
+
+        marker.setLatLng([nextY, nextX]);
+
+        const epsilon = 1;
+        if ( xTo - xFrom > epsilon && yTo - yFrom > epsilon )
+        {
+            animate( marker, [nextY, nextX], to, v0, time );
+        }
+    }, time );
+}
+
+function calculate_Velocity( from, to, duration )
+{
+    const xFrom = from[1];
+    const yFrom = from[0];
+    const xTo = to[1];
+    const yTo = to[0];
+    const distanceX = xTo-xFrom
+    const distanceY = yTo-yFrom
+    return { x: distanceX/duration, y: distanceY/duration };
+}
+
+function calculate_Distance( from, to )
+{
+    const xFrom = from[1];
+    const yFrom = from[0];
+    const xTo = to[1];
+    const yTo = to[0];
+    const dX = xFrom - xTo;
+    const dY = yFrom - yTo;
+    const distance = Math.sqrt(dX*dX+dY*dY );
+    return distance;
+}
 
 
 function create_Animation( map, coordinateArray, speed = 500, drawPolyline = false )

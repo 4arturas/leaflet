@@ -48,7 +48,6 @@ function extractGraphData(graphJson)
         const latlan = edge._draw_[1].points.map(point => ([
             point[1]*mulY, point[0]*mulX
         ]));
-console.log( latlan );
         const edgeData = {
             source: sourceNode,
             target: targetNode,
