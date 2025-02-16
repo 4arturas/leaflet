@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ant Design Tabs Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/5.10.2/antd.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/antd/5.10.2/antd.min.js"></script>
+<!-- Load Counter component -->
+<script type="text/babel" src="antd-components/Counter.js"></script>
+<!-- Load DateTimeRange component -->
+<script type="text/babel" src="antd-components/DateTimeRange.js"></script>
+<!-- Load ExpandableTable component -->
+<script type="text/babel" src="antd-components/ExpandableTable.js"></script>
+<!-- Load DraggableTree component -->
+<script type="text/babel" src="antd-components/DraggableTree.js"></script>
+<!-- Load LeafletMap component -->
+<script type="text/babel" src="antd-components/LeafletMap.js"></script>
+<script type="text/babel">
+  const { Tabs } = antd;
+  function App() {
+    const [activeKey, setActiveKey] = React.useState('1');
+    const onChange = (key) => {
+      setActiveKey(key);
+    };
+    return (
+            <div>
+              <Tabs activeKey={activeKey} onChange={onChange}>
+                <Tabs.TabPane tab="Expandable Table" key="1">
+                  <ExpandableTable />
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Date Picker" key="2">
+                  <DateTimeRange />
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Counter" key="3">
+                  <Counter />
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Draggable Tree" key="4">
+                  <DraggableTree />
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Leaflet Map" key="5">
+                  <LeafletMap />
+                </Tabs.TabPane>
+              </Tabs>
+            </div>
+    );
+  }
+  const { createRoot } = ReactDOM;
+  const root = createRoot(document.getElementById('root'));
+  root.render(<App />);
+</script>
+</body>
+</html>
