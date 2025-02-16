@@ -1,8 +1,6 @@
-// ExpandableTable.js
 const { Table } = antd;
 
 function RecursiveTable({ data }) {
-    // Define columns for the table
     const columns = [
         {
             title: 'Name',
@@ -21,10 +19,8 @@ function RecursiveTable({ data }) {
         },
     ];
 
-    // Function to check if a record has children
     const hasChildren = (record) => Array.isArray(record.children) && record.children.length > 0;
 
-    // Recursive render function for expanded rows
     const expandedRowRender = (record) => {
         if (hasChildren(record)) {
             return (
@@ -42,13 +38,12 @@ function RecursiveTable({ data }) {
                 expandedRowRender,
                 rowExpandable: (record) => hasChildren(record),
             }}
-            pagination={false} // Disable pagination for simplicity
+            pagination={true}
         />
     );
 }
 
 function ExpandableTable() {
-    // Sample nested data structure
     const data = [
         {
             key: 1,
