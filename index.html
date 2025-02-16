@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Material-UI Tabs Example</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mui/material@latest/dist/css/material.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react@latest/umd/react.development.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@latest/umd/react-dom.development.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mui/material@latest/umd/material-ui.development.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script type="text/babel" src="./Counter.js"></script>
+<script type="text/babel" src="./SecondTabComponent.js"></script>
+<script type="text/babel">
+  const { useState } = React;
+  const { Tabs, Tab, Box } = MaterialUI;
+
+  function App() {
+    const [value, setValue] = useState(0);
+    const handleChange = (event, newValue) => {
+      setValue(newValue);
+    };
+
+    return (
+            <div>
+              <Box sx={{ width: '100%' }}>
+                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                  <Tabs value={value} onChange={handleChange}>
+                    <Tab label="Counter" />
+                    <Tab label="Date Picker" />
+                    <Tab label="Tab Three" />
+                  </Tabs>
+                </Box>
+                {value === 0 && <Box p={3}><Counter /></Box>}
+                {value === 1 && <Box p={3}><SecondTabComponent /></Box>}
+                {value === 2 && <Box p={3}>Content for Tab Three</Box>}
+              </Box>
+            </div>
+    );
+  }
+
+  ReactDOM.render(<App />, document.getElementById('root'));
+</script>
+</body>
+</html>
