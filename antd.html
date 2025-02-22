@@ -6,6 +6,16 @@
   <title>Ant Design Tabs Example</title>
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- G Library -->
+  <script src="https://unpkg.com/@antv/g/dist/index.umd.min.js" type="application/javascript"></script>
+  <!-- G-Canvas Library -->
+  <script src="https://unpkg.com/@antv/g-canvas/dist/index.umd.min.js" type="application/javascript"></script>
+  <!-- G6 Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/antv-g6/4.5.5/g6.min.js"></script>
+  <!-- X6 Library -->
+  <script src="https://unpkg.com/@antv/x6@1.1.1/dist/x6.js"></script>
+  <!-- G2 Library -->
+  <script src="https://unpkg.com/@antv/g2/dist/g2.min.js"></script>
   <!-- ECharts Library -->
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"></script>
@@ -25,38 +35,83 @@
 <script type="text/babel" src="antd-components/LeafletMap.js"></script>
 <script type="text/babel" src="antd-components/BarChart.js"></script>
 <script type="text/babel" src="antd-components/HeatMap.js"></script>
+<script type="text/babel" src="antd-components/G6Graph.js"></script>
+<script type="text/babel" src="antd-components/G2Chart.js"></script>
+<script type="text/babel" src="antd-components/X6Graph.js"></script>
+<script type="text/babel" src="antd-components/G2Heatmap.js"></script>
+<script type="text/babel" src="antd-components/VennDiagram.js"></script>
+<script type="text/babel" src="antd-components/TimelineChart.js"></script>
+<script type="text/babel" src="antd-components/DynamicVennDiagram.js"></script>
+<script type="text/babel" src="antd-components/StackedBarChart.js"></script>
+<script type="text/babel" src="antd-components/StackedAreaChart.js"></script>
+<script type="text/babel" src="antd-components/GCanvasCircle.js"></script>
+<script type="text/babel" src="antd-components/Context.js"></script>
 <script type="text/babel">
   const { Tabs } = antd;
-  function App() {
-    const [activeKey, setActiveKey] = React.useState('1');
+  function App()
+  {
+    const [value, setValue] = React.useState('Hello');
+    const [activeKey, setActiveKey] = React.useState('17');
     const onChange = (key) => {
       setActiveKey(key);
     };
     return (
             <div>
-              <Tabs activeKey={activeKey} onChange={onChange}>
-                <Tabs.TabPane tab="Expandable Table" key="1">
-                  <ExpandableTable />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Date Picker" key="2">
-                  <DateTimeRange />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Counter" key="3">
-                  <Counter />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Draggable Tree" key="4">
-                  <DraggableTree />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Leaflet Map" key="5">
-                  <LeafletMap />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Bar Chart" key="6">
-                  <BarChart />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Heatmap" key="7">
-                  <HeatMap />
-                </Tabs.TabPane>
-              </Tabs>
+              <MyContext.Provider value={{ value, setValue }}>
+                <Tabs activeKey={activeKey} onChange={onChange}>
+                  <Tabs.TabPane tab="Expandable Table" key="1">
+                    <ExpandableTable />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Date Picker" key="2">
+                    <DateTimeRange />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Counter" key="3">
+                    <Counter />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Draggable Tree" key="4">
+                    <DraggableTree />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Leaflet Map" key="5">
+                    <LeafletMap />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Bar Chart" key="6">
+                    <BarChart />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Heatmap" key="7">
+                    <HeatMap />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="G6 Graph" key="8">
+                    <G6Graph />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="G2 Chart" key="9">
+                    <G2Chart />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="X6 Graph" key="10">
+                    <X6Graph />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="G2 Heatmap" key="11">
+                    <G2Heatmap />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Venn Diagram" key="12">
+                    <VennDiagram />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Timeline Chart" key="13">
+                    <TimelineChart />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Dynamic Venn Diagram" key="14">
+                    <DynamicVennDiagram />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Stacked Bar Chart" key="15">
+                    <StackedBarChart />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Stacked Area Chart" key="16">
+                    <StackedAreaChart />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="G Canvas Circle" key="17">
+                    <GCanvasCircle />
+                  </Tabs.TabPane>
+                </Tabs>
+              </MyContext.Provider>
             </div>
     );
   }

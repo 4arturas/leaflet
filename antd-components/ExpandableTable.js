@@ -43,7 +43,8 @@ function RecursiveTable({ data }) {
     );
 }
 
-function ExpandableTable() {
+function ExpandableTable()
+{
     const data = [
         {
             key: 1,
@@ -103,9 +104,10 @@ function ExpandableTable() {
         },
     ];
 
+    const { value, setValue } = React.useContext(MyContext);
     return (
         <div style={{ padding: '16px' }}>
-            <h3>Infinite Expandable Table Example</h3>
+            <h3>Infinite Expandable Table Example {value}</h3>
             <RecursiveTable data={data} />
         </div>
     );
