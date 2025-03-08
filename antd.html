@@ -20,6 +20,9 @@
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"></script>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsonata/jsonata.min.js"></script>
 </head>
 <body>
 <div id="root"></div>
@@ -45,13 +48,15 @@
 <script type="text/babel" src="antd-components/StackedBarChart.js"></script>
 <script type="text/babel" src="antd-components/StackedAreaChart.js"></script>
 <script type="text/babel" src="antd-components/GCanvasCircle.js"></script>
+<script type="text/babel" src="antd-components/G6Crime.js"></script>
 <script type="text/babel" src="antd-components/Context.js"></script>
+<script type="text/babel" src="antd-components/ApiCaller.js"></script>
 <script type="text/babel">
   const { Tabs } = antd;
   function App()
   {
     const [value, setValue] = React.useState('Hello');
-    const [activeKey, setActiveKey] = React.useState('17');
+    const [activeKey, setActiveKey] = React.useState('19');
     const onChange = (key) => {
       setActiveKey(key);
     };
@@ -109,6 +114,12 @@
                   </Tabs.TabPane>
                   <Tabs.TabPane tab="G Canvas Circle" key="17">
                     <GCanvasCircle />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Crime" key="18">
+                    <G6Crime />
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Api Caller" key="19">
+                    <ApiCaller />
                   </Tabs.TabPane>
                 </Tabs>
               </MyContext.Provider>

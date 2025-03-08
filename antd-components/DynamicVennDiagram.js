@@ -71,5 +71,3 @@ function DynamicVennDiagram() {
         </div>
     );
 }
-
-export default DynamicVennDiagram;

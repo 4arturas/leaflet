@@ -129,5 +129,3 @@ function TimelineChart() {
         </div>
     );
 }
-
-export default TimelineChart;

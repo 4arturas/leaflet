@@ -1,3 +1,3 @@
-export default function Copyright() {
+function Copyright() {
     return 'Copyright © Your Website ' + new Date().getFullYear() + '.';
 }
