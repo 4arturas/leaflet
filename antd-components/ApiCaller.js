@@ -16,17 +16,34 @@ function ApiCaller() {
         setError(null);
         setOutput(null);
 
+        const contents1 = {
+            "contents": [{
+                "parts":[{"text": `${inputValue}`}]
+            }]
+        }
+
+        const contents2 = {
+            "contents": [
+                {
+                    "parts": [
+                        {
+                            "text": "List a few popular cookie recipes using this JSON schema: Recipe = {\"recipe_name\": str} Return: list[Recipe]"
+                        }
+                    ]
+                }
+            ],
+            "generationConfig": {
+                "response_mime_type": "application/json"
+            }
+        };
+
         try {
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    "contents": [{
-                        "parts":[{"text": `${inputValue}`}]
-                    }]
-                })
+                body: JSON.stringify(contents1)
             });
 
             if (!response.ok) {
